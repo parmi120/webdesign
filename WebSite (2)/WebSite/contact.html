@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <title>MY FITNESS SITE</title>
+
+    <script src="Script2.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="navbar clearfix">
+            <div class="nav-container clearfix">
+                <h1 class="logo">
+                    <a href="#">Fitness Site</a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="exercises.html">Exercises</a></li>
+                        <li><a  class="active" href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="">About</a></li>
+
+                    </ul>
+                </nav>
+                <a href="" class="mobile-nav-icon">☰</a>
+            </div>
+        </div>
+    </header>
+
+    <form oninput="x.value=parseInt(a.value)*parseInt(num.value)">
+        <fieldset>
+            0 <input type="range" id="a"
+                     value="this.value=parseInt(this.value)"
+                     onchange="run(this.value);"> 100
+            <p>
+                Size of first number: <meter id="mtr" value="0.5"></meter>
+            </p>
+            <p>
+                <span id="val"></span> x <input type="number" id="num" value="50"> = <output id="x" for="a"></output>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <div>
+                <label for="mail">Please enter an email address:</label>
+                <input type="email" id="mail" placeholder="name@domain.tld" required>
+            </div>
+            <div>
+                <label for="mail">Please enter a website:</label>
+                <input type="url" id="website" placeholder="http://domain.com">
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>
+        </fieldset>
+        <fieldset>
+            <input id="dat" type="date" min="1900-01-01"> You chose a date: <span id="udt"></span>
+        </fieldset>
+    </form>
+
+    <script>
+  // number handling and meter tag
+  var val = document.getElementById("val");
+  var mtr = document.getElementById("mtr");
+  var num = document.getElementById("num").value;
+
+  val.innerHTML = num;
+  mtr.value = num/100;
+
+  var run = function(numval) {
+    val.innerHTML = numval;
+    mtr.value = numval/100;
+  }
+  // email input handler:
+  var email = document.getElementById("mail");
+  email.addEventListener("keyup", function (event) {
+    if (email.validity.typeMismatch) {
+      email.setCustomValidity("This requires an email address!");
+    } else {
+      email.setCustomValidity("");
+    }
+  });
+
+  // date handler
+  var dat = document.getElementById("dat");
+  var udt = document.getElementById("udt");
+  dat.addEventListener("change", function (event) {
+      udt.innerHTML = dat.value;
+  });
+    </script>
+
+
+
+</body>
+</html>
