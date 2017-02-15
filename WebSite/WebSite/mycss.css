@@ -1,0 +1,454 @@
+/* CSS Document */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+
+body {
+	background: #F5F5F5;
+	font-size:22px;
+	line-height: 32px;
+	color: #ffffff;
+	margin: 0;
+	padding: 0;
+	word-wrap:break-word !important;
+	font-family: 'Open Sans', sans-serif;
+	}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color: #FFF;
+}	
+
+h3 {
+	font-size: 30px;
+	line-height: 34px;
+	text-align: center;
+	color: #FFF;
+}
+
+h3 a {
+	color: #FFF;
+}
+
+a {
+	color: #FFF;
+}
+
+h1 {
+	margin-top: 100px;
+	text-align:center;
+	font-size:60px;
+	line-height: 70px;
+	font-family: 'Bree Serif', 'serif';
+	}
+
+#container {
+	margin: 0 auto;
+	max-width: 890px;
+}
+
+p {
+	text-align: center;
+}
+
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	margin:0;
+	padding: 0;
+	background-color: #254441;
+}
+
+#logo {
+	display: block;
+	padding: 0 30px;
+	float: left;
+	font-size:20px;
+	line-height: 60px;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display:inline-block;
+	float: left;
+	background-color: #254441;
+	}
+
+/* Styling the links */
+nav a {
+	display:block;
+	padding:14px 20px;	
+	color:#FFF;
+	font-size:17px;
+	text-decoration:none;
+}
+
+
+nav ul li ul li:hover { background: #000000; }
+
+/* Background color change on Hover */
+nav a:hover { 
+	background-color: #000000; 
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 60px; 
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+	#logo {
+		display: block;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+
+	nav {
+		margin: 0;
+	}
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	/* Stylinf the toggle lable */
+	.toggle {
+		display: block;
+		background-color: #254441;
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px;
+		text-decoration:none;
+		border:none;
+	}
+
+	.toggle:hover {
+		background-color: #000000;
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: #000000;
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+  nav ul ul ul a{
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: #212121; 
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}
+
+/* headings and images Content styles */
+
+h1 {
+	font-family: 'Oxygen', sans-serif;
+	text-align: center;
+	font-size: 175%;
+	color: #35404f;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	padding: 0 27% 0 0;
+
+}
+
+h2, h3 {
+	font-family: 'Oxygen' , sans-serif;
+	text-align: center;
+	color: #35404f;
+	text-transform: uppercase;
+	letter-spacing: 1%;
+}
+p {
+	padding: 2%;
+	color: #525453;
+	text-align: justify;
+
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+
+}
+
+#wrapper {
+	margin: 0 auto;
+	max-width: 1120px;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.one-third {
+	width: 28%;
+	float: left;
+	margin: 2% 0 3% 4%;
+
+}
+.chart {
+	padding: 0 0;
+}
+
+h2.welcome {
+	margin-top: 4%;
+}
+.left-col {
+	width: 60%;
+	float: left;
+	margin: 4% 0 4% 4%;
+}
+.sidebar {
+	width: 26%;
+	float: left;
+	margin: 4%;
+}
+.sidebar img {
+	opacity: .7;
+}
+footer {
+	background: #D3D3D3;
+	width: 100%;
+	padding-top: 1%;
+	overflow: auto;
+
+}.one-half {
+	width: 44%;
+	float: left;
+	margin: 2% 0 3% 4%;
+}
+footer h3 {
+	text-decoration: underline;
+
+}
+
+.socialcontact {
+	text-align: center;
+
+}
+.social li{
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 16.666666667%;
+	float: left;
+}
+.social i {
+	color: #FFF;
+	font-size: 190%;
+	opacity: .6;
+	margin: 0;
+	text-align: center;
+	width: 100%;
+	padding: 4%
+	
+
+}
+.social i:hover {
+	opacity: 1;
+
+}
+#facebook {
+	background: #3A5795;
+}
+#google-plus {
+	background: #D95232;
+}
+#twitter {
+	background: #5EA9DD;
+}
+#youtube {
+	background: #E12b27;
+}
+#instagram {
+	background: #527fa5;
+}
+#email {
+	background: #c92c19;
+}
+/* Media Queries social links
+--------------------------------------------- */
+@media screen and (max-width: 980px) {
+	h1 {
+		font-size: 125%;
+	}
+	.social i {
+		font-size: 175%;
+		padding: 3%;
+		}
+		.social li {
+			width: 50%;
+		}
+
+}
+/* Media Queries
+--------------------------------------------- */
+
+@media screen and (max-width: 769px) {
+	#wrapper {
+		margin-top: -1%;
+	}
+	.one-third {
+		width: 100%;
+		margin: 4% 0;
+	}
+	h1 {
+		font-size: 125%;
+		letter-spacing: 2px;
+	}
+	h2.welcome {
+		font-size: 120%;
+	}
+	.left-col {
+		width: 100%;
+		margin: 0 0 3% 0;	
+	}
+	.sidebar {
+		width: 100%;
+		margin: 0;
+	}
+	.sidebar img {
+		opacity: 1;
+	}
+	.one-half {
+		width: 100%;
+		margin: 0;
+	}
+	img {
+		width: 100%
+	}
+
+
+}

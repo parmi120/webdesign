@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <title>MY FITNESS SITE</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="Script2.js"></script>
+
+</head>
+<body>
+    <nav>
+        <div id="logo">Gills Fitness Site</div>
+
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+        <ul class="menu">
+
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="exercises.html">Exercises</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="">About</a></li>
+
+        </ul>
+    </nav>
+
+    <form oninput="x.value=parseInt(a.value)*parseInt(num.value)">
+        <fieldset>
+            0 <input type="range" id="a"
+                     value="this.value=parseInt(this.value)"
+                     onchange="run(this.value);"> 100
+            <p>
+                Size of first number: <meter id="mtr" value="0.5"></meter>
+            </p>
+            <p>
+                <span id="val"></span> x <input type="number" id="num" value="50"> = <output id="x" for="a"></output>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <div>
+                <label for="mail">Please enter an email address:</label>
+                <input type="email" id="mail" placeholder="name@domain.tld" required>
+            </div>
+            <div>
+                <label for="mail">Please enter a website:</label>
+                <input type="url" id="website" placeholder="http://domain.com">
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>
+        </fieldset>
+        <fieldset>
+            <input id="dat" type="date" min="1900-01-01"> You chose a date: <span id="udt"></span>
+        </fieldset>
+    </form>
+
+    <script>
+  // number handling and meter tag
+  var val = document.getElementById("val");
+  var mtr = document.getElementById("mtr");
+  var num = document.getElementById("num").value;
+
+  val.innerHTML = num;
+  mtr.value = num/100;
+
+  var run = function(numval) {
+    val.innerHTML = numval;
+    mtr.value = numval/100;
+  }
+  // email input handler:
+  var email = document.getElementById("mail");
+  email.addEventListener("keyup", function (event) {
+    if (email.validity.typeMismatch) {
+      email.setCustomValidity("This requires an email address!");
+    } else {
+      email.setCustomValidity("");
+    }
+  });
+
+  // date handler
+  var dat = document.getElementById("dat");
+  var udt = document.getElementById("udt");
+  dat.addEventListener("change", function (event) {
+      udt.innerHTML = dat.value;
+  });
+    </script>
+
+
+    <div class="clearfix"></div>
+
+    <footer>
+        <section class="one-half">
+            <h3>Social media links</h3>
+            <br>
+            <ul class="social">
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" id="facebook"></i></a></li>
+                <li><a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" id="google-plus"></i></a></li>
+                <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" id="twitter"></i></a></li>
+                <li><a href="https://youtube.com/" target="_blank"><i class="fa fa-youtube" id="youtube"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" id="instagram"></i></a></li>
+                <li><a href="" target="_blank"><i class="fa fa-envelope-o" id="email"></i></a></li>
+            </ul>
+        </section>
+
+        <section class="one-half">
+            <h3>Our Story</h3>
+            <br>
+
+            <p class="socialcontact">
+                add text assignment etc etc
+            </p>
+
+
+
+
+
+
+
+        </section>
+
+
+    </footer>
+
+
+
+    <p>&copy; Parminder Gill, 2017</p>
+
+
+
+</body>
+</html>
