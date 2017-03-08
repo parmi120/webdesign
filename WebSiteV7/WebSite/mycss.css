@@ -507,3 +507,39 @@ footer h3 {
 
 #contact .container form .required {
 	color:#b43838;}
+/* exercises gallery css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery {
+  width: 740px;
+  margin: 0 auto;
+  padding: 0px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+
+
+@media only screen and (max-width:480px) { 
+    .gallery {
+        width: 100%;
+        padding-bottom: 100%;
+    }
+}
+@media only screen and (max-width:650px) and (min-width:481px) { 
+    .gallery {
+        width: 50%;
+        padding-bottom: 40%;
+    }
+}
+@media only screen and (max-width:1050px) and (min-width:651px) { 
+    .gallery {
+        width: 33.3%;
+        padding-bottom: 40%;
+    }
+}
+
