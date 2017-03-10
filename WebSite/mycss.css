@@ -2,73 +2,64 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Bree+Serif);
-
 body {
 	background: #F5F5F5;
-	font-size:22px;
+	font-size: 22px;
 	line-height: 32px;
 	color: #ffffff;
 	margin: 0;
 	padding: 0;
-	word-wrap:break-word !important;
+	word-wrap: break-word !important;
 	font-family: 'Open Sans', sans-serif;
-	}
-
+}
 h1 {
 	font-size: 60px;
 	text-align: center;
 	color: #FFF;
-}	
-
+}
 h3 {
 	font-size: 30px;
 	line-height: 34px;
 	text-align: center;
 	color: #FFF;
 }
-
 h3 a {
 	color: #FFF;
 }
-
 a {
 	color: #FFF;
 }
-
 h1 {
 	margin-top: 100px;
-	text-align:center;
-	font-size:60px;
+	text-align: center;
+	font-size: 60px;
 	line-height: 70px;
 	font-family: 'Bree Serif', 'serif';
-	}
-
+}
 #container {
 	margin: 0 auto;
 	max-width: 890px;
 }
-
 p {
 	text-align: center;
 }
-
-.toggle,
-[id^=drop] {
+.toggle, [id^=drop] {
 	display: none;
 }
 
-/* Giving a background-color to the nav container. */
-nav { 
-	margin:0;
-	padding: 0;
-	background-color: #254441;
-}
+/* Giving a background-color to the nav container.
+navbar code is external */
 
+nav {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+}
 #logo {
 	display: block;
 	padding: 0 30px;
 	float: left;
-	font-size:20px;
+	font-size: 20px;
 	line-height: 60px;
 }
 
@@ -76,65 +67,72 @@ nav {
  * we need to add a clear after the container. */
 
 nav:after {
-	content:"";
-	display:table;
-	clear:both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
+
 nav ul {
 	float: right;
-	padding:0;
-	margin:0;
+	padding: 0;
+	margin: 0;
 	list-style: none;
 	position: relative;
-	}
-	
-/* Positioning the navigation items inline */
-nav ul li {
-	margin: 0px;
-	display:inline-block;
-	float: left;
-	background-color: #254441;
-	}
-
-/* Styling the links */
-nav a {
-	display:block;
-	padding:14px 20px;	
-	color:#FFF;
-	font-size:17px;
-	text-decoration:none;
 }
 
+/* Positioning the navigation items inline */
 
-nav ul li ul li:hover { background: #000000; }
+nav ul li {
+	margin: 0px;
+	display: inline-block;
+	float: left;
+	background-color: black;
+}
+
+/* Styling the links */
+
+nav a {
+	display: block;
+	padding: 14px 20px;
+	color: #FFF;
+	font-size: 17px;
+	text-decoration: none;
+}
+nav ul li ul li:hover {
+	background: green;
+}
 
 /* Background color change on Hover */
-nav a:hover { 
-	background-color: #000000; 
+
+nav a:hover {
+	background-color: green;
 }
 
 /* Hide Dropdowns by Default
  * and giving it a position of absolute */
+
 nav ul ul {
 	display: none;
-	position: absolute; 
+	position: absolute;
 	/* has to be the same number as the "line-height" of "nav a" */
-	top: 60px; 
+	top: 60px;
 }
-	
+
 /* Display Dropdowns on Hover */
-nav ul li:hover > ul {
-	display:inherit;
+
+nav ul li:hover>ul {
+	display: inherit;
 }
-	
+
 /* Fisrt Tier Dropdown */
+
 nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
+	width: 170px;
+	float: none;
+	display: list-item;
 	position: relative;
 }
 
@@ -142,24 +140,27 @@ nav ul ul li {
  * We move the 2nd and 3rd etc tier dropdowns to the left
  * by the amount of the width of the first tier.
 */
+
 nav ul ul ul li {
 	position: relative;
-	top:-60px;
-	/* has to be the same number as the "width" of "nav ul ul li" */ 
-	left:170px; 
+	top: -60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */
+	left: 170px;
 }
 
-	
 /* Change ' +' in order to change the Dropdown symbol */
-li > a:after { content:  ' +'; }
-li > a:only-child:after { content: ''; }
 
+li>a:after {
+	content: ' +';
+}
+li>a:only-child:after {
+	content: '';
+}
 
-/* Media Queries
+/* Media Queries for navbar
 --------------------------------------------- */
 
-@media all and (max-width : 768px) {
-
+@media all and (max-width: 768px) {
 	#logo {
 		display: block;
 		padding: 0;
@@ -167,107 +168,79 @@ li > a:only-child:after { content: ''; }
 		text-align: center;
 		float: none;
 	}
-
 	nav {
 		margin: 0;
 	}
-
 	/* Hide the navigation menu by default */
 	/* Also hide the  */
-	.toggle + a,
-	.menu {
+	.toggle+a, .menu {
 		display: none;
 	}
-
 	/* Stylinf the toggle lable */
 	.toggle {
 		display: block;
-		background-color: #254441;
-		padding:14px 20px;	
-		color:#FFF;
-		font-size:17px;
-		text-decoration:none;
-		border:none;
+		background-color: black;
+		padding: 14px 20px;
+		color: #FFF;
+		font-size: 17px;
+		text-decoration: none;
+		border: none;
 	}
-
 	.toggle:hover {
-		background-color: #000000;
+		background-color: green;
 	}
-
 	/* Display Dropdown when clicked on Parent Lable */
-	[id^=drop]:checked + ul {
+	[id^=drop]:checked+ul {
 		display: block;
 	}
-
 	/* Change menu item's width to 100% */
 	nav ul li {
 		display: block;
 		width: 100%;
-		}
-
-	nav ul ul .toggle,
-	nav ul ul a {
+	}
+	nav ul ul .toggle, nav ul ul a {
 		padding: 0 40px;
 	}
-
 	nav ul ul ul a {
 		padding: 0 80px;
 	}
-
-	nav a:hover,
- 	nav ul ul ul a {
-		background-color: #000000;
+	nav a:hover, nav ul ul ul a {
+		background-color: green;
 	}
-  
-	nav ul li ul li .toggle,
-	nav ul ul a,
-  nav ul ul ul a{
-		padding:14px 20px;	
-		color:#FFF;
-		font-size:17px; 
+	nav ul li ul li .toggle, nav ul ul a, nav ul ul ul a {
+		padding: 14px 20px;
+		color: #FFF;
+		font-size: 17px;
 	}
-  
-  
-	nav ul li ul li .toggle,
-	nav ul ul a {
-		background-color: #212121; 
+	nav ul li ul li .toggle, nav ul ul a {
+		background-color: #212121;
 	}
-
 	/* Hide Dropdowns by Default */
 	nav ul ul {
 		float: none;
-		position:static;
+		position: static;
 		color: #ffffff;
 		/* has to be the same number as the "line-height" of "nav a" */
 	}
-		
 	/* Hide menus on hover */
-	nav ul ul li:hover > ul,
-	nav ul li:hover > ul {
+	nav ul ul li:hover>ul, nav ul li:hover>ul {
 		display: none;
 	}
-		
 	/* Fisrt Tier Dropdown */
 	nav ul ul li {
 		display: block;
 		width: 100%;
 	}
-
 	nav ul ul ul li {
 		position: static;
-		/* has to be the same number as the "width" of "nav ul ul li" */ 
-
+		/* has to be the same number as the "width" of "nav ul ul li" */
 	}
-
 }
-
-@media all and (max-width : 330px) {
-
+@media all and (max-width: 330px) {
 	nav ul li {
-		display:block;
+		display: block;
 		width: 94%;
 	}
-
 }
 
 /* headings and images Content styles */
@@ -280,11 +253,9 @@ h1 {
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	padding: 0 27% 0 0;
-
 }
-
 h2, h3 {
-	font-family: 'Oxygen' , sans-serif;
+	font-family: 'Oxygen', sans-serif;
 	text-align: center;
 	color: #35404f;
 	text-transform: uppercase;
@@ -294,34 +265,26 @@ p {
 	padding: 2%;
 	color: #525453;
 	text-align: justify;
-
 }
-
 img {
 	max-width: 100%;
 	height: auto;
-
 }
-
 #wrapper {
 	margin: 0 auto;
 	max-width: 1120px;
 }
-
 .clearfix {
 	clear: both;
 }
-
 .one-third {
 	width: 28%;
 	float: left;
 	margin: 2% 0 3% 4%;
-
 }
 .chart {
 	padding: 0 0;
 }
-
 h2.welcome {
 	margin-top: 4%;
 }
@@ -339,26 +302,23 @@ h2.welcome {
 	opacity: .7;
 }
 footer {
-	background: #D3D3D3;
+	background: #050404;
 	width: 100%;
 	padding-top: 1%;
 	overflow: auto;
-
-}.one-half {
+}
+.one-half {
 	width: 44%;
 	float: left;
 	margin: 2% 0 3% 4%;
 }
 footer h3 {
 	text-decoration: underline;
-
 }
-
 .socialcontact {
 	text-align: center;
-
 }
-.social li{
+.social li {
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -373,12 +333,9 @@ footer h3 {
 	text-align: center;
 	width: 100%;
 	padding: 4%
-	
-
 }
 .social i:hover {
 	opacity: 1;
-
 }
 #facebook {
 	background: #3A5795;
@@ -398,8 +355,10 @@ footer h3 {
 #email {
 	background: #c92c19;
 }
+
 /* Media Queries social links
 --------------------------------------------- */
+
 @media screen and (max-width: 980px) {
 	h1 {
 		font-size: 125%;
@@ -407,13 +366,13 @@ footer h3 {
 	.social i {
 		font-size: 175%;
 		padding: 3%;
-		}
-		.social li {
-			width: 50%;
-		}
-
+	}
+	.social li {
+		width: 50%;
+	}
 }
-/* Media Queries
+
+/* Media Queries for social links
 --------------------------------------------- */
 
 @media screen and (max-width: 769px) {
@@ -433,7 +392,7 @@ footer h3 {
 	}
 	.left-col {
 		width: 100%;
-		margin: 0 0 3% 0;	
+		margin: 0 0 3% 0;
 	}
 	.sidebar {
 		width: 100%;
@@ -449,6 +408,271 @@ footer h3 {
 	img {
 		width: 100%
 	}
-
-
 }
+
+/*code from codepen for the contact page https://codepen.io/dvanpel/pen/DrpIH*/
+
+#contact {
+	width: 100%;
+	height: 100%;
+	margin 0 auto;
+	background: #DDD;
+}
+.container {
+	width: 960px;
+	height: auto;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+#contact .container form input, #contact .container form textarea {
+	width: 97.4%;
+	height: 30px;
+	padding: 5px 10px;
+	font-size: 12px;
+	color: #999;
+	letter-spacing: 1px;
+	background: #FFF;
+	border: 2px solid #FFF;
+	margin-bottom: 25px;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+#contact .container form input:focus, #contact .container form textarea:focus {
+	border: 2px solid #dd4545;
+	color: #999;
+}
+#contact .container form textarea {
+	height: 150px;
+}
+#contact .container form .submit {
+	width: 100%;
+	padding: 5px 10px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	background: #dd4545;
+	height: 40px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #FFF;
+	border: 2px solid #b43838;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+#contact .container form .submit:hover {
+	color: #FFF;
+	border: 2px solid #dd4545;
+	background: #b43838;
+	cursor: pointer;
+}
+#contact .container form .required {
+	color: #b43838;
+}
+
+/* exercises gallery css with media queries */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.gallery {
+	width: 740px;
+	margin: 0 auto;
+	padding: 0px;
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+}
+@media only screen and (max-width:480px) {
+	.gallery {
+		width: 100%;
+		padding-bottom: 100%;
+	}
+}
+@media only screen and (max-width:650px) and (min-width:481px) {
+	.gallery {
+		width: 50%;
+		padding-bottom: 40%;
+	}
+}
+@media only screen and (max-width:1050px) and (min-width:651px) {
+	.gallery {
+		width: 33.3%;
+		padding-bottom: 40%;
+	}
+}
+
+/* about me page */
+
+@import url(https://fonts.googleapis.com/css?family=Open+sans);
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+.profile {
+	font-family: 'Open Sans', Arial, sans-serif;
+	position: relative;
+	float: left;
+	margin: 10px 1%;
+	min-width: 230px;
+	max-width: 315px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	line-height: 1.4em;
+	font-size: 14px;
+	box-shadow: none !important;
+}
+.profile * {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.profile .profile-image {
+	display: inline-block;
+	width: 80%;
+	z-index: 1;
+	position: relative;
+	padding: 10px;
+	border: 2px solid #e8b563;
+}
+.profile .profile-image img {
+	max-width: 100%;
+	vertical-align: top;
+}
+.profile figcaption {
+	width: 100%;
+	background-color: #F2F2F2;
+	color: #555;
+	padding: 125px 25px 25px;
+	margin-top: -100px;
+	display: inline-block;
+}
+.profile h3, .profile h4, .profile p {
+	margin: 0 0 5px;
+}
+.profile h3 {
+	font-weight: 600;
+	font-size: 1.3em;
+	font-family: 'Playfair Display', Arial, sans-serif;
+}
+.profile h4 {
+	color: #8c8c8c;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+.profile p {
+	font-size: 1em;
+	letter-spacing: 1px;
+	opacity: 0.9;
+}
+.profile i {
+	padding: 10px 2px;
+	display: inline-block;
+	font-size: 18px;
+	font-weight: normal;
+	color: #e8b563;
+	opacity: 0.75;
+}
+
+/* book styling and media queries */
+
+#maincontent {
+	max-width: 700px;
+	margin: 0;
+	padding: 10px 2;
+	min-width: 300px;
+}
+.book {
+	width: 100%;
+	height: 0;
+	padding-bottom: 30%;
+	position: relative;
+	overflow: hidden;
+}
+.book iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+@media only screen and (max-width:480px) {
+	.book {
+		width: 100%;
+		padding-bottom: 100%;
+	}
+}
+@media only screen and (max-width:650px) and (min-width:481px) {
+	.book {
+		width: 100%;
+		padding-bottom: 80%;
+	}
+}
+/*table */
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+table tr {
+  background: black;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+	
